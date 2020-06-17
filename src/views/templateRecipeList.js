@@ -1,4 +1,4 @@
-import { getRecipeList, currentUser } from "../controllers/firebase.js";
+import { getRecipeList, deletePost } from "../controllers/firebase.js";
 
 export const recipeList = () => {
 
@@ -6,9 +6,9 @@ export const recipeList = () => {
     allRecipeInList.innerHTML = '';
     allRecipeInList.className = "recipe-list";
 
-    const onSuccess = (recipeList) => {
-        console.log('voy a mostrar la', recipeList)
-        recipeList.forEach(recipe => {
+    const onSuccess = (recipeLista) => {
+        console.log('voy a mostrar la', recipeLista)
+        recipeLista.forEach(recipe => {
                 const recipeHTML =
                  ` <div class="newPost">
                      <tr>
@@ -22,7 +22,7 @@ export const recipeList = () => {
                             <label for="userRecipe" class="labelNewPost">Preparación</label>
                             <span id="userRecipe" class="showRecipe">${recipe.data().recipeContent}</span>
                             <div class="likeComent">
-                            <i class="fas fa-trash-alt fa-2x"></i>
+                            <i id="delete" class="fas fa-trash-alt fa-2x"></i>
                                 <a href="#"><img src="./img/orange.png" class="like"></a>
                                 <a href="#"><i class="fas fa-comment fa-2x" class="coment"></i></a>      
                             </div>
@@ -30,24 +30,21 @@ export const recipeList = () => {
                     </div>`;
                 
                 allRecipeInList.innerHTML += recipeHTML;
-                /*let clickDelete = allRecipeInList.getElementsByClassName("fas fa-trash-alt fa-2x");
-                for(let i=0; i<clickDelete.length; i++){
-                    allRecipeInList.innerHTML = '';
-                    allRecipeInList.innerHTML += recipeHTML;
-                    let btnDelete = clickDelete[i];
-                    btnDelete.addEventListener('click', () => { //cambioooo
-                        const onSuccess = () => {
-                             console.log("Document successfully deleted!");
-                         }
-                         const onError = (error) => {
-                             console.log(error)
-                         }
-                      console.log("1",recipe.id)
-                         deletePost(recipe.id,onSuccess, onError);
-    
-                         });
-                }*/
 
+                document.getElementById('delete').addEventListener('click', () => {
+                    const onSuccess = (docRef) => {
+                        // Limpiar la lista
+                        // Section guarda el array obtenido de recipeList
+                        let section = document.getElementsByClassName('recipe-list')[0];
+                        let padre = section.parentNode;
+
+                        // Cargar lista con nuevo post
+                        padre.appendChild(recipeList());
+
+                    }
+                    deletePost(recipe.id, onSuccess, ()=>{})
+                    
+                })
         });  
     }
 

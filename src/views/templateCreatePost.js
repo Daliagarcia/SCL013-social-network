@@ -9,7 +9,6 @@ export const createPost = () => {
                           <div class="create-post-div">
                               <div class="textarea-div">
                               <input type="text" placeholder="Nombre de la receta" id="nameUserPost" class="userName"/>
-                              
                               <textarea placeholder="Ingredientes" id="ingredients" class="writeIngredients" cols="30" rows="6"></textarea>
                               <input type="text" placeholder="Escribe tu receta aqui" cols="30" rows="6" id="recipe" class="writeRecipe" />
                               </div>
@@ -25,8 +24,7 @@ export const createPost = () => {
                                   </select>
                                   <button class="recipePost" type="submit" id="recipeToPost">Publicar</button>
                                   </div>
-                          </div>
-                          <h1 class="titlePost">Recetario</h1>`;
+                          </div>`;
 
   createPostSection.innerHTML = createPostView;
 

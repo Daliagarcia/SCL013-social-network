@@ -57,7 +57,6 @@ export const createUserWithFirebase = (email, pass, onSuccess, onError) => {
     .createUserWithEmailAndPassword(email, pass)
     .then((result) => {
       emailVerification();
-
       onSuccess(result)
     })
     .catch((error) => {
@@ -149,7 +148,6 @@ Parametros:
 const post = (collection, object, onSuccess, onError) => {
 
   db.collection(collection).add(object)
-
   .then((docRef) => {
     onSuccess(docRef)
   })
@@ -182,6 +180,7 @@ export const postRecipe = (displayName, recipeName, ingredients, content, photoU
 export const getRecipeList = (onSuccess) => {
   console.log('esto es un console');
   db.collection("recipeList").orderBy('date','desc').onSnapshot((recipeList) => {
+    console.log("snapshot");    
     onSuccess(recipeList);
   });
 }
@@ -192,17 +191,15 @@ export const currentUser = () => {
 }
 
 //Función borrar post
-/*export const deletePost = (id,onSuccess, onError) =>{ 
+export const deletePost = (id, onSuccess, onError) =>{ 
 
   db.collection("recipeList").doc(id).delete()
-  
-  .then((recipeList) => {
-   onSuccess(recipeList);
-   console.log('2',recipe.id)
+  .then((doc) => {
+   onSuccess(doc);
    console.log("Document successfully deleted!");
  }).catch((error) => {
    onError(error);
    console.error("Error removing document: ", error);
  });
  
-  }*/
+}

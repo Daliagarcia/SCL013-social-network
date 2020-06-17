@@ -38,9 +38,8 @@ export const register = () => {
 
 const onSuccess = (result) => {
   const name = document.getElementById('name').value;
-  updateProfile(name, '', ()=>{}, ()=>{} )
+  updateProfile(name, '', ()=>{}, ()=>{})
   window.location.href = './index.html#/login';
-
   console.log(result.user);
 };
 
@@ -49,4 +48,5 @@ const onError = (error) => {
   const errorMessage = error.message;
   alert(errorCode);
 };
+
 
