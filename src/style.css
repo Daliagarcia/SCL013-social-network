@@ -415,8 +415,18 @@ border: none;
     justify-content: flex-end;
     align-items: flex-end;
     align-content: flex-end;
-    
 }
+
+.btnDelete { /*cambiooooo*/
+    text-decoration: none;
+    border: none;
+    width: 22px;
+    height: 10px;
+    color: white;
+    margin: 0px 5px 0px 5px;
+}
+
+
 .like{
   max-width: 35px;
   margin-right: 5px;
@@ -557,7 +567,6 @@ border: none;
         background: url(img/img-background.png);
         background-repeat: no-repeat;
         background-size: cover;
-        /* align-self: auto; */
         width: 100%;
         height: 100vh;
     }
@@ -565,7 +574,7 @@ border: none;
     .containerColor {
         display: flex;
         width: 318px;
-        height: 453px;
+        height: auto;
         left: 29px;
         top: 138px;
         background: rgba(252, 244, 244, 0.48);
@@ -624,7 +633,7 @@ border: none;
 
     .userRegisterform {
         width: 320px;
-        height: 380px;
+        height: auto;
     }
 
     .userRegisterform i {
@@ -641,7 +650,7 @@ border: none;
         width: 320px;
     }
 
-    /*-----SIDEBAR------ CAMBIOOOOS*/
+    /*-----SIDEBAR------*/
 
     #sidebar {
         width: 190px;
@@ -667,12 +676,17 @@ border: none;
         width: 31px;
     }
 
-    /*-----------POST----------cambios abajo-------------*/
+    /*-----------POST-------------*/
 
     .newPost {
         width: 380px;
         height: auto;
         margin: 40px 2px 0px 2px;
+    }
+
+    .titlePost { 
+        margin: 28px 204px 0px -14px;
+        font-size: 20px;
     }
 
     .like {
@@ -683,7 +697,7 @@ border: none;
         max-width: 10px;
     }
 
-    .create-post-div { /*cambio*/
+    .create-post-div { 
     width: 304px;
     height: auto;
     margin: 120px 23px 0px 2px;
@@ -717,13 +731,18 @@ border: none;
 
     .writeRecipe,
     .writeIngredients {
-        width: 220px;
-       margin: 11px 0px 0px 40px;
+        width: 266px;
+        font-size: 12px;
+       margin: 12px 7px 0px 35px;
+       height: auto;
+
     }
 
     .writeRecipe::placeholder,
     .writeIngredients {
         font-size: 12px;
+        width: 220px;
+        margin: 11px 0px 0px 30px;
     }
 
     .userName,
@@ -733,20 +752,22 @@ border: none;
     }
 
     .dateNewPost {
-        /*cambio*/
         font-size: 12px;
-        margin: 11px 0px 0px 40px;
+        margin: 11px 0px 0px 30px;
     }
 
     .btnPost,
     .selectRecipe,
     .recipePost {
-        font-size: 12px;
-        width: 100px;
-        height: 35px;
+        font-size: 11px;
+        width: 85px;
+        height: 30px;
+        padding: 0px;
+        margin:0px;
+        
     }
 
     .selectRecipe {
-        margin: 0px 29px 0px 10px;
+        margin: 0px 18px 0px 10px;
     }
 }

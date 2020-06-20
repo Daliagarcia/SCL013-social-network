@@ -14,8 +14,6 @@ export const firebaseConfig = {
 // Initialize Firebase
 export const initializeFirebase = () => {
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  firebaseAuthentication();
 };
 
 // Sign in User
@@ -31,24 +29,7 @@ export const signIn = (emailA, passwordA, onSuccess, onErrorMessage) => {
     });
 };
 
-// Observer
-export const firebaseAuthentication = () => {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // User is signed in.
-      console.log("user", user);
-      const displayName = user.displayName;
-      const email = user.email;
-      const emailVerified = user.emailVerified;
-      const photoURL = user.photoURL;
-      const isAnonymous = user.isAnonymous;
-      const uid = user.uid;
-      const providerData = user.providerData;
-      const verifiedText = "";
-    } else {
-    }
-  });
-};
+
 
 // Create user with firebase
 export const createUserWithFirebase = (email, pass, onSuccess, onError) => {
@@ -134,7 +115,7 @@ export const userSignOut = (callback) => {
 
 initializeFirebase();
 
-const db = firebase.firestore();
+export const db = firebase.firestore();
 
 /* 
 Descripcion: Funcion generica que guarda un objeto en una coleccion de firebase, si no existe colection, crea una nueva
@@ -162,6 +143,7 @@ export const postRecipe = (displayName, recipeName, ingredients, content, photoU
 
   const recipe = {
       date: date.toLocaleString(),
+      uid: currentUser().uid,
       userName: displayName,
       recipeName: recipeName,
       recipeIngredients: ingredients,
@@ -172,34 +154,18 @@ export const postRecipe = (displayName, recipeName, ingredients, content, photoU
     post('recipeList', recipe, onSuccess, onError)
 }
 
-/* Funcion que trae la coleccion de firebase para luego imprimirla en pantalla al crear post 
-    onSuccess: Muestra la lista completa de los post
-    onError: Error
-*/
-
-export const getRecipeList = (onSuccess) => {
-  console.log('esto es un console');
-  db.collection("recipeList").orderBy('date','desc').onSnapshot((recipeList) => {
-    console.log("snapshot");    
-    onSuccess(recipeList);
-  });
-}
-
 export const currentUser = () => {
   const user = firebase.auth().currentUser;
   return user
 }
 
 //Función borrar post
-export const deletePost = (id, onSuccess, onError) =>{ 
-
+export const deletePost = (id) =>{ 
   db.collection("recipeList").doc(id).delete()
-  .then((doc) => {
-   onSuccess(doc);
-   console.log("Document successfully deleted!");
+  .then((recipeList) => {
+   console.log("Document successfully deleted!", recipeList);
  }).catch((error) => {
    onError(error);
    console.error("Error removing document: ", error);
  });
- 
 }

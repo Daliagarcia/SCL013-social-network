@@ -2,6 +2,7 @@ import { postRecipe, currentUser } from '../controllers/firebase.js';
 import { recipeList } from './templateRecipeList.js';
 
 export const createPost = () => {
+  
   const createPostSection = document.createElement("section");
   createPostSection.className = "create-post";
 
