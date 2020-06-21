@@ -1,9 +1,8 @@
-import { updateProfile } from '../controllers/firebase.js'; 
+import { updateProfile } from '../controllers/firebase.js';
 
 export const editProfile = () => {
-    const divEditProfile = document.createElement('div');
-  
-    const viewEditProfile = `
+  const divEditProfile = document.createElement('div');
+  const viewEditProfile = `
                             <section class="containerEditProfile">
                             <div class="colorContainerProfile">
                             <h1 class="titleEditProfile">¡Edita tu perfil!</h1>
@@ -19,30 +18,19 @@ export const editProfile = () => {
                             </div>
                             </div>
                             </section>`;
-  
-    divEditProfile.innerHTML = viewEditProfile;
-
-    divEditProfile.querySelector('#profileBtn').addEventListener('click', () => {
-
-
-        const nameProfile = document.querySelector('#name').value;
-        const specialty = document.querySelector('#specialty').value;
-        // const photoURL = '';
-
-        const onSuccess = (docRef) => {
-          document.querySelector('#name').value = '';
-          document.querySelector('#specialty').value = '';
-          console.log("Document written with ID: ", docRef.id);
-        }
-
-        const onError = (error) => {
-          console.error("Error adding document: ", error);
-        }
-        
-        updateProfile(nameProfile, specialty, onSuccess, onError);
-  
-    });
-
-    return divEditProfile;
+  divEditProfile.innerHTML = viewEditProfile;
+  divEditProfile.querySelector('#profileBtn').addEventListener('click', () => {
+    const nameProfile = document.querySelector('#name').value;
+    const specialty = document.querySelector('#specialty').value;
+    const onSuccess = (docRef) => {
+      document.querySelector('#name').value = '';
+      document.querySelector('#specialty').value = '';
+      console.log('Document written with ID: ', docRef.id);
+    };
+    const onError = (error) => {
+      console.error('Error adding document: ', error);
+    };
+    updateProfile(nameProfile, specialty, onSuccess, onError);
+  });
+  return divEditProfile;
 };
-  

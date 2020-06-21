@@ -264,10 +264,12 @@ hr {
     position: fixed;
     width: 250px;
     height: 100%;
-    background: #FFF7E9;
+    /* background: #FFF7E9; */
     box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
     left: -200px;
     transition: all 500ms linear;
+    background: url(img/img-background.png);
+    align-items: flex-start;
 }
 
 #sidebar.active {
@@ -285,7 +287,15 @@ li a {
     color: black;
     text-decoration: none;
 }
-
+.logOut {
+    border: 1px solid #F9B233;
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 20px;
+    cursor: pointer;
+    align-self: flex-end;
+}
 .listMenu {
     background: #F9B233;
     width: 180px;
@@ -295,8 +305,9 @@ li a {
     cursor: pointer;
 }
 
-.listMenu:hover {
+.listMenu:hover, .logOut:hover {
     background-color: rgba(253, 199, 105, 0.966);
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .logoToggle {

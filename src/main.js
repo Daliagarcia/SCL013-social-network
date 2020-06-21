@@ -1,14 +1,13 @@
 import { changeRoute } from './router.js';
 
-
 // Observer
 export const firebaseAuthentication = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       // User is signed in.
-      changeRoute('#/home')
+      changeRoute('#/home');
     } else {
-      changeRoute('#/login')
+      changeRoute('#/login');
     }
   });
 };
@@ -16,10 +15,8 @@ export const firebaseAuthentication = () => {
 firebaseAuthentication();
 
 const init = () => {
-
   window.addEventListener('hashchange', () => {
     changeRoute(window.location.hash);
-
   });
 };
 
