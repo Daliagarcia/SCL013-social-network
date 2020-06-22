@@ -112,8 +112,8 @@ export const recipeListView = () => {
       allRecipeInList.innerHTML += recipeHTML;
 
       if (recipe.uid === currentUser().id ) {
-          const editDelete = allRecipeInList.querySelector('.editDelete');
-         editDelete.style.display = 'block';
+        const editDelete = allRecipeInList.querySelector('.editDelete');
+        editDelete.style.display = 'block';
       }
     });
 

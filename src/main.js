@@ -5,7 +5,9 @@ export const firebaseAuthentication = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       // User is signed in.
-      changeRoute('#/home');
+      if (user.emailVerified) {
+        changeRoute('#/home');
+      }
     } else {
       changeRoute('#/login');
     }
