@@ -16,7 +16,7 @@ export const menuToggle = () => {
                               </li>
                               <li class="listMenu"><a href="#/profile">Mi Perfil</a></li>
                               <li class="listMenu"><a href="#/home" id="home">Recetario</a></li>
-                              <li class="logOut""><a href="#/login" id="out">Cerrar Sesión <i class="fas fa-sign-out-alt"></i> </a></li>
+                              <li class="logOut""><a href="#/login" id="out">Cerrar Sesión <i class="fas fa-sign-out-alt"></i></a></li>
                             </ul>
                           </div>
                           `;
