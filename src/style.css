@@ -279,7 +279,7 @@ hr {
 #sidebar ul li {
     color: #000000;
     list-style: none;
-    padding: 11px 12px;
+    padding: 11px 13px;
     text-align: left;
 }
 
@@ -287,6 +287,7 @@ li a {
     color: black;
     text-decoration: none;
 }
+
 .logOut {
     border: 1px solid #F9B233;
     width: 180px;
@@ -296,6 +297,7 @@ li a {
     cursor: pointer;
     align-self: flex-end;
 }
+
 .listMenu {
     background: #F9B233;
     width: 180px;
@@ -305,9 +307,10 @@ li a {
     cursor: pointer;
 }
 
-.listMenu:hover, .logOut:hover {
+.listMenu:hover,
+.logOut:hover {
     background-color: rgba(253, 199, 105, 0.966);
-    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .logoToggle {
@@ -448,15 +451,17 @@ header h4 {
     top: 65%;
 }
 
-.editDelete, .saveCancel{
-    display:flex;
+.editDelete,
+.saveCancel {
+    display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
     align-items: flex-end;
     align-content: flex-end;
 }
 
-.editDelete i, .saveCancel i{
+.editDelete i,
+.saveCancel i {
     text-decoration: none;
     color: #F9B233;
     cursor: pointer;
@@ -679,6 +684,11 @@ header h4 {
         width: 190px;
     }
 
+
+    #sidebar ul li {
+        padding: 8px 17px;
+    }
+
     .listMenu {
         width: 142px;
         height: 37px;
@@ -693,6 +703,12 @@ header h4 {
 
     li a {
         font-size: 12px;
+    }
+
+    .logOut {
+        width: 142px;
+        height: 37px;
+        margin: 12px;
     }
 
     #sidebar .toggle-btn span {
@@ -717,7 +733,8 @@ header h4 {
         height: 24px;
     }
 
-    .editDelete i ,.saveCancel i {
+    .editDelete i,
+    .saveCancel i {
         font-size: 18px;
         margin-right: 13px;
         margin-bottom: 12px;
