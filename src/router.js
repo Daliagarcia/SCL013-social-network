@@ -4,7 +4,7 @@ import { register } from './views/templateRegister.js';
 import { timeline } from './views/templateTimeline.js';
 import { editProfile } from './views/templateEditProfile.js';
 import { home } from './views/templateHome.js';
-import { currentUser } from './controllers/firebase.js'
+import { currentUser } from './controllers/firebase.js';
 
 
 export const showTemplate = (hash) => {
@@ -22,29 +22,29 @@ export const showTemplate = (hash) => {
       break;
     case '#/home':
       containerRoot.appendChild(home(timeline()));
-    break;
+      break;
     case '#/profile':
       containerRoot.appendChild(home(editProfile()));
-    break;
+      break;
     default:
-      containerRoot.innerHTML = `<h2>No existe :c</h2>`;
-    
+      containerRoot.innerHTML = `<h2>No existe :c</h2>
+                                `;
   }
 };
 
 export const changeRoute = (hash) => {
-
- if (currentUser()) {
-      if (hash === '#/home') {
-      return showTemplate(hash);
+  if (currentUser()) {
+    if (hash === '#/home') {
+      showTemplate(hash);
     } else if (hash === '#/profile') {
-      return showTemplate(hash);
-    } 
+      showTemplate(hash);
+    }
   } else {
     if (hash === '#/register') {
-    return showTemplate(hash);
-  } else if(hash === '#/login') {
-    return showTemplate('#/login');
-  } 
+      showTemplate(hash);
+    } else if (hash === '#/login') {
+      showTemplate('#/login');
+    }
   }
+  return showTemplate(hash);
 };

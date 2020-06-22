@@ -113,7 +113,12 @@ Para el proceso de planificación y diseño se utilizaron las siguientes herrami
 ![Prototipo alta desktop](http://imgfz.com/i/V7Cef5z.png)
 ![Prototipo alta desktop](http://imgfz.com/i/pg2xSHu.png)
 ![Prototipo alta desktop](http://imgfz.com/i/49b5LgG.png)
-![Prototipo alta movil](http://imgfz.com/i/pe3wFnr.png)
+
+
+### **Prototipo de Alta Fidelidad versión Mobile**
+
+![Prototipo alta movil](http://imgfz.com/i/FeUNT1x.png)
+![Prototipo alta movil](http://imgfz.com/i/UroPI45.png)
 
 ***
 

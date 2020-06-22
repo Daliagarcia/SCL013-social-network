@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Comfortaa', cursive;
-    background-color:whitesmoke;
+    background-color: whitesmoke;
 }
 
 .containerPage {
@@ -65,7 +65,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    
+
 }
 
 .loginInput {
@@ -80,12 +80,17 @@ body {
     top: 396.94px;
     background: rgba(196, 196, 196, 0.12);
 }
-.loginInput:focus, .userRegisterInput {
+
+.loginInput:focus,
+.userRegisterInput {
     outline-color: #F9B233;
 }
-.btnStart:focus, .btnGoogle:focus {
+
+.btnStart:focus,
+.btnGoogle:focus {
     outline: none;
 }
+
 .btnStart {
     align-self: center;
     border: none;
@@ -216,6 +221,7 @@ hr {
     width: 35%;
     margin: 15px;
 }
+
 .btnGoogle {
     align-self: center;
     text-decoration: none;
@@ -230,15 +236,18 @@ hr {
     cursor: pointer;
     font-family: 'Comfortaa', cursive;
     -webkit-box-shadow: none;
-	-moz-box-shadow: none;
+    -moz-box-shadow: none;
     box-shadow: none;
 }
+
 .btnGoogle:link {
     text-decoration: none;
 }
+
 .btnGoogle:hover {
     background-color: rgba(253, 199, 105, 0.966);
 }
+
 .btnGoogleMobile {
     display: flex;
     max-width: 10%;
@@ -251,68 +260,84 @@ hr {
 /*---------SIDEBAR---------*/
 
 #sidebar {
-    display:flex;
+    display: flex;
     position: fixed;
     width: 250px;
     height: 100%;
-    background: #FFF7E9;
+    /* background: #FFF7E9; */
     box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
     left: -200px;
     transition: all 500ms linear;
-  }
-  
-  #sidebar.active {
-    left: 0px;
-  }
-  
-  #sidebar ul li {
-    color:#000000;
-    list-style: none;
-    padding: 11px 12px;
-    text-align:left;
-  }
+    background: url(img/img-background.png);
+    align-items: flex-start;
+}
 
-  li a{
-    color:black;
+#sidebar.active {
+    left: 0px;
+}
+
+#sidebar ul li {
+    color: #000000;
+    list-style: none;
+    padding: 11px 13px;
+    text-align: left;
+}
+
+li a {
+    color: black;
     text-decoration: none;
-  }
- 
-  .listMenu{
+}
+
+.logOut {
+    border: 1px solid #F9B233;
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 20px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.listMenu {
     background: #F9B233;
     width: 180px;
     height: 40px;
     border-radius: 20px;
-    margin:20px;
+    margin: 20px;
     cursor: pointer;
-  }
- 
-  .listMenu:hover{
-    background-color: rgba(253, 199, 105, 0.966);
 }
-  .logoToggle {
+
+.listMenu:hover,
+.logOut:hover {
+    background-color: rgba(253, 199, 105, 0.966);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.logoToggle {
     display: block;
     margin: 0 auto;
     width: 198px;
-    padding: 6px; 
-  }
-  
-  #sidebar .toggle-btn {
+    padding: 6px;
+}
+
+#sidebar .toggle-btn {
     position: absolute;
     left: 270px;
     top: 20px;
     cursor: pointer;
-  }
-  
-  #sidebar .toggle-btn span {
+}
+
+#sidebar .toggle-btn span {
     display: block;
     width: 40px;
     text-align: center;
     font-size: 30px;
     border: 3px solid #000;
-  }
+}
 
-  /*---------EDITAR PERFIL---------*/
-.containerEditProfile{
+/*---------EDITAR PERFIL---------*/
+
+.containerEditProfile {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -320,9 +345,9 @@ hr {
     width: 100vw;
     height: 100vh;
     background-color: whitesmoke;
-    }
+}
 
-.colorContainerProfile{
+.colorContainerProfile {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -331,18 +356,18 @@ hr {
     height: 600px;
     left: 621px;
     top: 150px;
-    margin: 50px; 
+    margin: 50px;
     background: #FDE9C7;
     border-radius: 22px;
     box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
 }
 
-.titleEditProfile{
+.titleEditProfile {
     font-size: 35px;
-   
+
 }
 
-.infoEditProfile{
+.infoEditProfile {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -351,58 +376,74 @@ hr {
     margin: 20px 0px 20px 0px;
 }
 
-.profileCancelBtn, .profileBtn{
+.profileCancelBtn,
+.profileBtn {
     background: #F9B233;
     padding: 10px;
     border-radius: 20px;
     border: none;
     width: 125px;
 }
-.profileItem{
+
+.profileItem {
     margin-bottom: 20px;
 }
 
-.profileUploadBtn{
-    margin-bottom: 20px; 
+.profileUploadBtn {
+    margin-bottom: 20px;
     width: 125px;
-height: 38px;
-background: #F9B233;
-border-radius: 20px;
-border: none;
+    height: 38px;
+    background: #F9B233;
+    border-radius: 20px;
+    border: none;
 }
 
-.nameProfile{
+.nameProfile {
     margin-bottom: 20px;
     padding: 10px;
     border: none;
     width: 255px;
 }
 
-.specialty{
-    padding: 10px; 
-    border: none; 
+.specialty {
+    padding: 10px;
+    border: none;
     width: 255px;
 }
 
-.infoEditProfile i{
+.infoEditProfile i {
     margin: 10px;
 }
 
 /*---------POST---------*/
 
-.create-post{
+.create-post {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
 }
-.newPost{
+
+header {
+    padding: 40px;
+    margin-top: 45px;
+    text-align: center;
+    font-size: 28px
+}
+
+
+header h4 {
+    font-weight: normal;
+    padding: 30px;
+}
+
+.newPost {
     background-color: white;
     box-sizing: border-box;
     box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.3), 0 0px 0px 0 rgba(0, 0, 0, 0.575);
     border-radius: 7px;
     width: 700px;
     height: auto;
-    margin-top:60px;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -410,34 +451,23 @@ border: none;
     top: 65%;
 }
 
-.likeComent {
+.editDelete,
+.saveCancel {
+    display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
     align-items: flex-end;
     align-content: flex-end;
 }
 
-.btnDelete { /*cambiooooo*/
-    text-decoration: none;
-    border: none;
-    width: 22px;
-    height: 10px;
-    color: white;
-    margin: 0px 5px 0px 5px;
-}
-
-
-.like{
-  max-width: 35px;
-  margin-right: 5px;
-  margin-bottom: -4px;
-}
-
-.likeComent i{
+.editDelete i,
+.saveCancel i {
     text-decoration: none;
     color: #F9B233;
-    margin-right: 15px;
-    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 25px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .create-post-div {
@@ -448,23 +478,28 @@ border: none;
     border-radius: 7px;
     width: 700px;
     height: auto;
-    margin-top: 120px;
     left: 28.4%;
     top: 15%;
 }
 
-.writeRecipe, .writeIngredients{
+.writeRecipe,
+.writeIngredients {
+    font-family: Comfortaa;
     width: 550px;
-    font-size: 18px;
+    font-size: 14px;
     height: auto;
     border: none;
     margin: 15px 0px 0px 70px;
 }
-.writeRecipe:focus, .writeIngredients {
+
+.writeRecipe:focus,
+.writeIngredients {
     outline: none;
 }
-.writeRecipe::placeholder, .writeIngredients{
-    font-size: 18px;
+
+.writeRecipe::placeholder,
+.writeIngredients {
+    font-size: 14px;
     font-family: Comfortaa;
     font-style: normal;
     font-weight: normal;
@@ -472,69 +507,45 @@ border: none;
 
 .create-post-options {
     display: flex;
-    margin: 20px;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
-.upload-btn {
-    overflow: hidden;
-    display: inline-block;
-    margin-left: 50px;
-  }
-  
-  .btnPost {
-    background: #F9B233;
-    width: 112px;
-    height: 35px;
-    border-radius: 20px;
-    cursor: pointer;
-    border: none;
-  }
-
-  .recipePost{ 
+.recipePost {
+    font-family: Comfortaa;
     background: #F9B233;
     padding: 12px;
     height: 35px;
-    border-radius: 20px; 
-    margin: 0px 49px 0px -51px;
-    cursor: pointer;
-    border: none;
-  }  
-  
-  .upload-btn input[type=file] {
-    font-size: 5px;
-    opacity: 0;
-  }
-
-  .selectRecipe{
-    background: #F9B233;
-    width: 112px;
-    height: 35px;
     border-radius: 20px;
-    margin-right: 300px;
+    margin-right: 13px;
+    margin-bottom: 15px;
     cursor: pointer;
     border: none;
-  }
+}
 
-  .showRecipe{
-    width: 627px;
-    height: 100px;
+.showRecipe {
+    width: 557px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    height: auto;
     border: none;
-    margin: 20px 0px 70px;
-  }
+}
 
-.userName, .labelNewPost {
+.userName,
+.labelNewPost {
     align-self: flex-start;
     margin-left: 10%;
     margin-top: 5%;
     font-family: Comfortaa;
     font-style: normal;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 22px;
     border: none;
 }
 
-.titlePost{        
+.titlePost {
     margin: 36px 526px 0px 0px;
     font-size: 35px;
     font-weight: normal;
@@ -611,16 +622,18 @@ border: none;
         color: black;
         text-decoration: none;
     }
+
     .btnStart {
         width: 221px;
     }
+
     .btnGoogle {
         width: 221px;
     }
+
     .btnGoogleMobile {
         display: flex;
         margin: -2px 0px -18px 12px
-        
     }
 
     /*REGISTER PAGE*/
@@ -650,14 +663,36 @@ border: none;
         width: 320px;
     }
 
+    /*-----EDITAR PERFIL----*/
+
+    .titleEditProfile {
+        font-size: 25px;
+    }
+
+    .colorContainerProfile {
+        width: 310px;
+        margin: 36px;
+    }
+
+    .nameProfile .specialty {
+        width: 228px;
+    }
+
     /*-----SIDEBAR------*/
 
     #sidebar {
         width: 190px;
     }
 
+
+    #sidebar ul li {
+        padding: 8px 17px;
+    }
+
     .listMenu {
-        width: 155px;
+        width: 142px;
+        height: 37px;
+        margin: 12px;
 
     }
 
@@ -667,7 +702,13 @@ border: none;
     }
 
     li a {
-        font-size: 15px;
+        font-size: 12px;
+    }
+
+    .logOut {
+        width: 142px;
+        height: 37px;
+        margin: 12px;
     }
 
     #sidebar .toggle-btn span {
@@ -679,28 +720,45 @@ border: none;
     /*-----------POST-------------*/
 
     .newPost {
-        width: 380px;
+        width: 304px;
         height: auto;
-        margin: 40px 2px 0px 2px;
+        margin: 22px 23px 0px 2px;
     }
 
-    .titlePost { 
+    .recipePost {
+        font-family: Comfortaa;
+        font-size: 10px;
+        padding: 6px;
+        width: 60px;
+        height: 24px;
+    }
+
+    .editDelete i,
+    .saveCancel i {
+        font-size: 18px;
+        margin-right: 13px;
+        margin-bottom: 12px;
+    }
+
+    .titlePost {
         margin: 28px 204px 0px -14px;
         font-size: 20px;
     }
 
-    .like {
-        max-width: 30px;
+    header {
+        padding: 20px;
+        margin-top: 45px;
+        font-size: 18px
     }
 
-    .coment {
-        max-width: 10px;
+    header h4 {
+        padding: 10px;
     }
 
-    .create-post-div { 
-    width: 304px;
-    height: auto;
-    margin: 120px 23px 0px 2px;
+    .create-post-div {
+        width: 304px;
+        height: auto;
+        margin: 0px 23px 0px 2px;
     }
 
     .writeRecipe {
@@ -708,33 +766,21 @@ border: none;
         margin: 2px 0px 0px 35px;
     }
 
-    .upload-btn input[type=file] {
-        font-size: 2px;
-        opacity: 0;
-        cursor: pointer;
-    }
-
-    .selectRecipe {
-        margin: 0px 20px 0 20px;
-    }
-
-    .upload-btn {
-        margin-left: 0px;
-    }
-
     .showRecipe {
-        width: 335px;
+        width: 242px;
         font-size: 12px;
-        margin: 12px 7px 0px 35px;
-        height: auto;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        height: auto
     }
 
     .writeRecipe,
     .writeIngredients {
-        width: 266px;
+        width: 243px;
         font-size: 12px;
-       margin: 12px 7px 0px 35px;
-       height: auto;
+        margin: 12px 7px 0px 35px;
+        height: auto;
 
     }
 
@@ -754,17 +800,6 @@ border: none;
     .dateNewPost {
         font-size: 12px;
         margin: 11px 0px 0px 30px;
-    }
-
-    .btnPost,
-    .selectRecipe,
-    .recipePost {
-        font-size: 11px;
-        width: 85px;
-        height: 30px;
-        padding: 0px;
-        margin:0px;
-        
     }
 
     .selectRecipe {

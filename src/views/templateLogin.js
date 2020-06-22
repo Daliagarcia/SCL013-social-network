@@ -22,7 +22,6 @@ export const login = () => {
                         <button id="loginBtn" class="btnStart" type="submit">Iniciar sesión</button>
                         <button id="loginGoogleBtn" class="btnGoogle"><img src="./img/logoGoogle.png" class="btnGoogleMobile">Iniciar sesión</button>
                         </div>
-                        
                         <div>
                         <hr size="3px" />
                         <p class="titleRegister">¿No tienes cuenta? Regístrate<a href="#/register" id="newAccount" class="signUp"> AQUÍ </a></p>
@@ -36,7 +35,7 @@ export const login = () => {
 
   // Firebase callback
   const onSuccess = (result) => {
-    if ( result.user.emailVerified === true ) {
+    if (result.user.emailVerified === true) {
       window.location.href = './index.html#/home';
     } else {
       alert('verifique su correo electronico para verificar el registro');
@@ -44,20 +43,15 @@ export const login = () => {
   };
 
   const onError = (error) => {
-    const errorCode = error.code;
     const errorMessage = error.message;
     alert(errorMessage);
   };
-  
   // Login with access
   divLogin.querySelector('#loginBtn').addEventListener('click', () => {
-  
     const emailA = document.getElementById('emailA').value;
     const passwordA = document.getElementById('passwordA').value;
     signIn(emailA, passwordA, onSuccess, onError);
-  
   });
-
   // Login with google
   divLogin.querySelector('#loginGoogleBtn').addEventListener('click', () => {
     googleLogin(onSuccess, onError);
