@@ -1,4 +1,4 @@
-import { db, deletePost } from '../controllers/firebase.js';
+import { db, deletePost, currentUser } from '../controllers/firebase.js';
 
 const editPost = () => {
   const editPostButton = document.querySelectorAll('#btnEdit');
@@ -85,6 +85,7 @@ export const recipeListView = () => {
     allRecipeInList.innerHTML = '';
 
     recipeList.docs.forEach((recipe) => {
+
       const recipeHTML = ` 
                           <div class="newPost" data-id="${recipe.id}">
                              <tr>
@@ -101,7 +102,7 @@ export const recipeListView = () => {
                                         <hr size="3px" />
                                         <label for="userRecipe" id="recipeLabel" class="labelNewPost">Preparación</label>
                                         <span id="userRecipe" class="showRecipe">${recipe.data().recipeContent}</span>
-                                    <div class="editDelete">
+                                    <div class="editDelete" style="display: none">
                                         <i id="btnEdit" class="fas fa-edit"></i>
                                         <i id="deleteBtn" class="fas fa-trash-alt fa-2x"></i>
                                     </div>
@@ -109,6 +110,11 @@ export const recipeListView = () => {
                           </div>`;
 
       allRecipeInList.innerHTML += recipeHTML;
+
+      if (recipe.uid === currentUser().id ) {
+          const editDelete = allRecipeInList.querySelector('.editDelete');
+         editDelete.style.display = 'block';
+      }
     });
 
     editPost('uid');
