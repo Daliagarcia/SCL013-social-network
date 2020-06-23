@@ -33,7 +33,7 @@ export const login = () => {
 
   divLogin.innerHTML = viewLogin;
 
-  // Firebase callback
+  // Firebase
   const onSuccess = (result) => {
     if (result.user.emailVerified === true) {
       window.location.href = './index.html#/home';
