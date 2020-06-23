@@ -28,7 +28,7 @@ const editPost = () => {
 
       editPostView.style.display = 'block';
 
-      editPostView.innerHTML = `<div id="edit-post" class="textarea-div" data-edit-id="${recipe.id}">
+      editPostView.innerHTML = `<div id="edit-post" class="textarea-div">
                                       <input type="text" placeholder="Nombre de la receta" id="nameUserPost" class="userName" value="${recipeName.innerHTML}"/>
                                       <br>
                                       <label for="ingredients"  class="labelNewPost">Ingredientes</label>
@@ -85,7 +85,6 @@ export const recipeListView = () => {
     allRecipeInList.innerHTML = '';
 
     recipeList.docs.forEach((recipe) => {
-
       const recipeHTML = ` 
                           <div class="newPost" data-id="${recipe.id}">
                              <tr>
@@ -111,7 +110,7 @@ export const recipeListView = () => {
 
       allRecipeInList.innerHTML += recipeHTML;
 
-      if (recipe.uid === currentUser().id ) {
+      if (recipe.uid === currentUser().id) {
         const editDelete = allRecipeInList.querySelector('.editDelete');
         editDelete.style.display = 'block';
       }
